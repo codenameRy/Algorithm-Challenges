@@ -1,4 +1,5 @@
 //Median of Two Sorted Arrays
+//Hard Leetcode problem
 //Given two sorted arrays nums1 and nums2 of size m and n respectively, 
 //return the median of the two sorted arrays.
 
@@ -21,7 +22,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
     else return (nums[Math.floor(nums.length / 2) - 1] + nums[Math.floor(nums.length /2)]) / 2;
 };
 
-nums1 = [1, 2, 3, 4, 5, 6]
+nums1 = [1, 2, 3, 4, 5, 6, 8]
 nums2 = [0, 0, 0, 0, 10, 10]
 
 console.log(findMedianSortedArrays(nums1, nums2));
