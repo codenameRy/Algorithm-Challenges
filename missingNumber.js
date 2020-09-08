@@ -31,17 +31,18 @@ console.log(missingNumbers(arr2))
 
 function findMissingNumbers(arr){
     const missing=[]; //Create empty Array
-    let numSort = arr.sort((a,b) => a-b) //Create new variable to sort numbers
-    for (let i = arr[0]; i <= numSort[numSort.length-1]; i++)
-    {if (numSort.indexOf(i) === -1) missing.push(i)}
+    let numSort = arr.sort((a,b) => a - b) //Create new variable to sort numbers
+    for (let i = numSort[0]; i <= numSort[numSort.length - 1]; i++) {
+    if (numSort.indexOf(i) === -1) missing.push(i)
+    }
     return missing;
  }
 
  arr3 = [1,2,5,6]; //3, 4
  arrx = [2,4,7,8,10]; //3,5,6,9
 
- console.log("Array 3 " + findMissingNumbers(arr3));
- console.log("Array 3 " + findMissingNumbers(arrx));
+ console.log("Array 3 is missing " + findMissingNumbers(arr3));
+ console.log("Array 3 is missing " + findMissingNumbers(arrx));
 
 
  arr3 = [-3,-2,1,5];
