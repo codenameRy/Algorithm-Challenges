@@ -98,6 +98,8 @@ function knapsack(items, capacity){
     }
   }
   
+
+  
   // test
   var items = [
     {w:70,v:135},
@@ -119,4 +121,15 @@ function knapsack(items, capacity){
   
   var capacity = 750;
   console.log(knapsack(items, capacity));
+
+
+
+items2 = [
+  {w:1, v:6}, 
+  {w:2, v:10}, 
+  {w:3, v:12}]
+maxWeight = 5
+// knapsack(items, maxWeight) = 22
+
+console.log(knapsack(items2,maxWeight))
   

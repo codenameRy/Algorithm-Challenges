@@ -9,5 +9,5 @@ var intToRoman = function(num) {
 };
 
 console.log(intToRoman(10));
-console.log(intToRoman(25));
+console.log(intToRoman(40));
 console.log(intToRoman(102));
