@@ -21,7 +21,7 @@
 var isPalindrome = function(x) {
     return x == String(x).split('').reverse().join('')
   };
-console.log(isPalindrome(121))
+// console.log(isPalindrome(121));
 
   //Solution 2 - Runtime 204ms
 var isPalindrome2 = function(x) {
@@ -35,7 +35,7 @@ var isPalindrome2 = function(x) {
     return y === revX;
 };
 
-console.log(isPalindrome(-121))
+// console.log(isPalindrome(-121));
 
 //Solution 3 - Runtim 200ms
 
@@ -49,4 +49,13 @@ var isPalindrome3 = function(x) {
     return (x === revX) || (x === Math.floor(revX / 10));
 };
 
-console.log(isPalindrome3(101))
+console.log(isPalindrome3(101));
+
+//Measure execution time
+console.time('Execution Time');
+
+// task starts
+for (var i = 0; i < 100000000;i++);
+// task ends
+
+console.timeEnd('Execution Time');

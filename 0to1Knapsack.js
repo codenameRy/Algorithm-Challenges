@@ -141,3 +141,11 @@ maxWeight = 5;
 
 console.log(knapsack(items2,maxWeight));
 
+//Measure execution time
+console.time('Execution Time');
+
+// task starts
+for (var i = 0; i < 100000000;i++);
+// task ends
+
+console.timeEnd('Execution Time');
