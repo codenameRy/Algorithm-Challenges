@@ -9,32 +9,40 @@
 // maxWeight = 5
 // knapsack(items, maxWeight) = 22
 
-// function maxKnapsack(items, W) {
-//     let cache = [];
-//     for (g = 0; g < items.length+1; g++){
-//          cache[g] = [];
-//          for (h = 0; h < W+1; h++) {
-//               cache[g][h] = 0;
-//          }
-//     }
-//     let weights = items.map(item => item.weight);
-//     let values = items.map(item => item.value);
-//     for (let i = 0; i < items.length+1; i++) {
-//          for (let j = 0; j < W+1; j++) {
-//               if (i ==== 0 || j === 0)
-//                    cache[i][j] = 0;
-//               else if (weights[i-1] <= j) {
-//                    let included = values[i-1] + cache[i-1][j-weights[i-1]];
-//                    let excluded = cache[i-1][j];
-//                    cache[i][j] = Math.max(included, excluded);
-//               }
-//               else
-//                    cache[i][j] = cache[i-1][j]
-//          }
-//     }
-//     return cache[items.length][W];
-// }
+//Solution 1
+function maxKnapsack(items, W) {
+    let cache = [];
+    for (g = 0; g < items.length+1; g++){
+         cache[g] = [];
+         for (h = 0; h < W+1; h++) {
+              cache[g][h] = 0;
+         }
+    }
+    let weights = items.map(item => item.weight);
+    let values = items.map(item => item.value);
+    for (let i = 0; i < items.length+1; i++) {
+         for (let j = 0; j < W+1; j++) {
+              if (i === 0 || j === 0)
+                   cache[i][j] = 0;
+              else if (weights[i-1] <= j) {
+                   let included = values[i-1] + cache[i-1][j-weights[i-1]];
+                   let excluded = cache[i-1][j];
+                   cache[i][j] = Math.max(included, excluded);
+              }
+              else
+                   cache[i][j] = cache[i-1][j]
+         }
+    }
+    return cache[items.length][W];
+}
 
+
+//Test 1
+items3 = [{value: 70, weight: 10}, {value: 80, weight: 15}, {value:100, weight: 20}, {value: 130, weight: 25}, {value: 140, weight: 35}, {value: 160, weight: 40}];
+maxweight3 = 35;
+console.log(maxKnapsack(items3, maxweight3));
+
+//Solution 2
 function knapsack(items, capacity){
     // This implementation uses dynamic programming.
     // Variable 'memo' is a grid(2-dimentional array) to store optimal solution for sub-problems,
@@ -128,8 +136,8 @@ items2 = [
   {w:1, v:6}, 
   {w:2, v:10}, 
   {w:3, v:12}]
-maxWeight = 5
+maxWeight = 5;
 // knapsack(items, maxWeight) = 22
 
-console.log(knapsack(items2,maxWeight))
-  
+console.log(knapsack(items2,maxWeight));
+
