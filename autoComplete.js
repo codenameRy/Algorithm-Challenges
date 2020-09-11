@@ -43,10 +43,25 @@ console.log(autoComplete(dict, prefixB));
 //      } 
 //  } 
 
-function autoComplete2(inputValue, arr) {
-    for ( let i = 0; i < arr.length; i++) {
-        if(arr[i][i].toLowerCase().indexOf(value.toLowerCase()) > -1) {
-            
-        }
-    }
-}
+// function autoComplete2(inputValue, arr) {
+//     for ( let i = 0; i < arr.length; i++) {
+//         if(arr[i][i].toLowerCase().indexOf(value.toLowerCase()) > -1) {
+//             var val = document.createTextNode(arr[i]); 
+//           node.appendChild(val); 
+//         }
+//     }
+// }
+
+function matchPeople(input) {
+    var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
+    return people.filter(function(person) {
+      if (person.match(reg)) {
+        return person;
+      }
+    });
+  }
+  
+  function changeInput(val) {
+    var autoCompleteResult = matchPeople(val);
+    document.getElementById("result").innerHTML = autoCompleteResult;
+  }

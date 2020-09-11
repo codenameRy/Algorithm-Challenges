@@ -16,7 +16,7 @@
 // Your algorithm should run in linear runtime complexity. 
 // Could you implement it using only constant extra space complexity?
 
-var missingNumbers = function(nums) {
+var missingNumber = function(nums) {
     let sum = nums.reduce((a,b) => a + b);
     return (nums.length + 1) * nums.length / 2 - sum;
 }

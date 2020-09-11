@@ -14,8 +14,11 @@
 
 //Solution 1 - For Loop
 var findDuplicates = function(nums) {
+    // creating a new List
     const result = []; nums.unshift(0);
     
+    // Taking the absolute value to find index
+    // If it is not greater than 0 (i.e) negative then the number is a duplicate
     for(let i = 0; i < nums.length; i++) {
         const idx = Math.abs(nums[i]);
         if(nums[idx] < 0) result.push(idx);
